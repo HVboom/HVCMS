@@ -120,7 +120,7 @@ GEM
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
-    faker (2.23.0)
+    faker (3.5.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-arm-linux-gnu)
@@ -466,7 +466,7 @@ DEPENDENCIES
   capybara
   debug
   factory_bot_rails (~> 6.0)
-  faker (~> 2.0)
+  faker (~> 3.5)
   guard (~> 2.18)
   guard-rspec (~> 4.7)
   haml-rails (~> 2.0)
