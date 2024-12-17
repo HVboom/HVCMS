@@ -371,14 +371,14 @@ GEM
       racc (~> 1.5)
       sexp_processor (~> 4.16)
     rubyzip (2.3.2)
-    securerandom (0.4.0)
+    securerandom (0.4.1)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     sexp_processor (4.17.3)
     shellany (0.0.1)
-    shoulda-matchers (5.3.0)
+    shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
     simplecov (0.22.0)
       docile (~> 1.1)
@@ -483,7 +483,7 @@ DEPENDENCIES
   rubocop-haml (~> 0.2.4)
   rubocop-rails-omakase
   selenium-webdriver
-  shoulda-matchers (~> 5.0)
+  shoulda-matchers (~> 6.4)
   simplecov
   solid_cable
   solid_cache
