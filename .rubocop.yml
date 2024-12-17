@@ -1,0 +1,31 @@
+inherit_from: .rubocop_todo.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# Load rubocop-haml to lint HAML files
+require:
+  - rubocop-haml
+
+# Include HAML files for linting, but exclude SimpleCov output
+AllCops:
+  TargetRubyVersion: 3.3
+  Include:
+    - '**/*.haml'
+  Exclude:
+    - 'coverage/**/*'
+
+# Overwrite or add rules to create your own house style
+#
+# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Enabled: false
+
+# Additional rules for Ruby logic in HAML files
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
