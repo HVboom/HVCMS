@@ -1,5 +1,26 @@
 # Changelog
 
+## [v0.2.0] - 2025-01-06
+
+### Added
+
+- **Full documentation setup** using Jekyll and the TeXt theme.
+- **Collections-based structure** with `content/` as the root.
+- **Navigation YAML** for dynamic menu integration.
+- **Auto-generated permalinks** to ensure a clean URL structure.
+- **Modify date (`modify_date`) tracking** for all documentation pages.
+
+### Changed
+
+- **Folder restructure:** Moved `_usage`, `_development`, `_chatgpt` under `content/`.
+- **Enabled `collections_dir: content`** to streamline collection handling.
+- **Renamed files to use hyphens** instead of underscores for consistency.
+
+### Fixed
+
+- **Resolved Apache Forbidden (403) errors** by adding landing pages.
+- **Removed unnecessary TOC and titles** from section index pages.
+
 ## [0.1.0] - 2024-12-17
 
 ### Added
