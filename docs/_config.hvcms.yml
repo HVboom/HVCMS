@@ -1,0 +1,17 @@
+title: HVCMS Documentation
+description: >- # ignore newlines until further settings
+  Official documentation for HVCMS Rails app.
+
+url: "*.docs.hvboom.biz"
+
+collections_dir: content
+collections:
+  usage:
+    output: true
+    permalink: /usage/:name.html
+  development:
+    output: true
+    permalink: /development/:name.html
+  chatgpt:
+    output: true
+    permalink: /chatgpt/:name.html
