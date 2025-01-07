@@ -1,0 +1,42 @@
+header:
+  - title: Usage
+    url: /usage/
+    key: usage
+  - title: Development
+    url: /development/
+    key: development
+  - title: ChatGPT
+    url: /chatgpt/
+    key: chatgpt
+  - title: GitHub
+    url: https://github.com/HVboom/HVCMS/docs
+
+usage:
+  - title: Setup
+    url: /usage/setup.html
+  - title: Managing Pages
+    url: /usage/managing-pages.html
+  - title: File Uploads
+    url: /usage/file-uploads.html
+  - title: Troubleshooting
+    url: /usage/troubleshooting.html
+
+development:
+  - title: Contributing
+    url: /development/contributing.html
+  - title: Code Structure
+    url: /development/code-structure.html
+  - title: Testing
+    url: /development/testing.html
+  - title: Branching Model
+    url: /development/branching-model.html
+  - title: Tools
+    url: /development/tools.html
+
+chatgpt:
+  - title: Generating Prompts
+    url: /chatgpt/generating-prompts.html
+  - title: Development Journey
+    url: /chatgpt/development-journey.html
+  - title: Best Practices
+    url: /chatgpt/best-practices.html

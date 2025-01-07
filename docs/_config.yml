@@ -1,0 +1,57 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+email: Mario@HVboom.ch
+github_username: HVboom
+
+author:
+  name: Mario Lotz
+  type: # person # "person" (default), "organization"
+  url:
+  avatar: /assets/images/Mario.jpg
+  bio:
+  email: Mario@HVboom.ch
+  linkedin: mario-lotz # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
+  github: HVboom # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+
+# license: CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
+
+# Build settings
+theme: jekyll-text-theme
+images: "/assets/images/"
+
+strict_front_matter: true
+
+markdown: kramdown
+highlighter: rouge
+# kramdown:
+#   syntax_highlighter_opts:
+#     block:
+#       line_numbers: true
+
+target-blank:
+  add_css_classes: target-blank target-blank__icon
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      author: Mario
+      layout: "article"
+      full_width: false
+      show_title: false
+      show_tags: true
+      aside:
+        toc: true

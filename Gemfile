@@ -71,6 +71,9 @@ group :development, :test do
   # Use Guard to support TDD
   gem 'guard', '~> 2.18', require: false
   gem 'guard-rspec', '~> 4.7', require: false
+
+  # And for the documentation part
+  gem 'jekyll', '~> 4.2'
 end
 
 group :development do
@@ -85,4 +88,9 @@ group :test do
   # Setup system tests
   gem 'capybara'
   gem 'selenium-webdriver'
+end
+
+group :jekyll_plugins do
+  gem 'jekyll-text-theme'
+  gem 'jekyll-target-blank'
 end

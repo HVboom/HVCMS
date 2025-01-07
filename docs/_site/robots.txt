@@ -1,0 +1,1 @@
+Sitemap: *.docs.hvboom.biz/sitemap.xml
