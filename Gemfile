@@ -63,7 +63,7 @@ group :development, :test do
   gem 'overcommit', require: false
 
   # RSpec testing framework
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 7.1'
   gem 'factory_bot_rails', '~> 6.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'faker', '~> 2.0'
