@@ -2,7 +2,7 @@ title: HVCMS Documentation
 description: >- # ignore newlines until further settings
   Official documentation for HVCMS Rails app.
 
-url: "*.docs.hvboom.biz"
+url: "https://hvcms.docs.hvboom.biz"
 
 collections_dir: content
 collections:
@@ -15,3 +15,17 @@ collections:
   chatgpt:
     output: true
     permalink: /chatgpt/:name.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "chatgpt"
+    values:
+      full_width: false
+      show_title: false
+      show_tags: true
+      aside:
+        toc: true # Enable auto-generated table of contents
+      sidebar:
+        nav: "chatgpt"
+

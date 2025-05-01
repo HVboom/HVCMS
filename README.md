@@ -1,24 +1,53 @@
-# README
+# HVCMS - Headless Version-Controlled CMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+HVCMS is a **lightweight, flexible, and version-controlled content management system** designed for static website generation. It provides an **easy-to-use interface** for managing content while ensuring everything is **tracked using Git**.
 
-Things you may want to cover:
+## 🚀 Features
 
-* Ruby version
+- **Version-Controlled Content** → Every change is stored in Git, enabling history tracking and rollbacks.
+- **Static Site Generation** → Pages are exported as static HTML files for speed and security.
+- **Multi-Page Support** → Supports different page types including:
+  - Text-based content (Markdown + ActionText)
+  - Slideshows
+  - Embedded Google Maps
+- **File & Image Uploads** → Drag-and-drop file management with automatic thumbnail generation.
+- **Git-Based Export Workflow** → Clean URL structure, automated page publishing.
 
-* System dependencies
+## 📖 Documentation
 
-* Configuration
+The full documentation is available online at:
+🔗 **[HVCMS Docs](https://docs.hvboom.ch)**
 
-* Database creation
+### 📚 Key Sections:
 
-* Database initialization
+- **[Usage Guide](https://docs.hvboom.ch/usage/)** → Step-by-step guide for end users.
+- **[Developer Docs](https://docs.hvboom.ch/development/)** → Contribution guidelines and codebase structure.
+- **[ChatGPT for Development](https://docs.hvboom.ch/chatgpt/)** → How AI assisted the project.
 
-* How to run the test suite
+The documentation is hosted using:
 
-* Services (job queues, cache servers, search engines, etc.)
+- **GitHub Pages** → `docs.hvboom.ch`
+- **Apache + Passenger** → Local and production hosting.
 
-* Deployment instructions
+## 🛠️ Development Setup
 
-* ...
+To set up HVCMS for local development, follow these steps:
+
+```bash
+git clone https://github.com/HVboom/HVCMS.git
+cd HVCMS
+bundle install
+```
+
+## 📢 Contributing
+
+HVCMS is **open-source** and welcomes contributions!
+You can:
+
+- Report issues
+- Submit pull requests
+- Suggest new features
+
+For developer guidelines, check the **[Developer Documentation](https://docs.hvboom.ch/development/)**.
+
+---

@@ -34,9 +34,21 @@ development:
     url: /development/tools.html
 
 chatgpt:
-  - title: Generating Prompts
+  - title: "Generating Prompts"
     url: /chatgpt/generating-prompts.html
-  - title: Development Journey
+  - title: "Development Journey"
     url: /chatgpt/development-journey.html
-  - title: Best Practices
+  - title: "Best Practices"
     url: /chatgpt/best-practices.html
+  - title: "Lessons Learned"
+    url: /chatgpt/lessons-learned.html
+  - title: "Prompts & AI Development"
+    children:
+      - title: "App Setup Prompt"
+        url: /chatgpt/app-setup-prompt.html
+      - title: "Documentation Setup Prompt"
+        url: /chatgpt/documentation-setup-prompt.html
+      - title: "Testing Strategy Prompt"
+        url: /chatgpt/testing-strategy-prompt.html
+      - title: "UI/UX Considerations Prompt"
+        url: /chatgpt/ui-ux-prompt.html

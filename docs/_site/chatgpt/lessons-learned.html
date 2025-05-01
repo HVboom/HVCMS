@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Setup Guide - HVCMS Documentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Lessons Learned - HVCMS Documentation</title>
 
-<meta name="description" content="Setup Guide">
-<link rel="canonical" href="https://hvcms.docs.hvboom.biz/usage/setup.html"><link rel="alternate" type="application/rss+xml" title="HVCMS Documentation" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="📖 Lessons Learned: HVCMS Documentation Setup">
+<link rel="canonical" href="https://hvcms.docs.hvboom.biz/chatgpt/lessons-learned.html"><link rel="alternate" type="application/rss+xml" title="HVCMS Documentation" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -253,8 +253,31 @@
 </head>
   <body>
     <div class="root" data-is-touch="false">
-      <div class="layout--page js-page-root">
-<div class="page__main js-page-main page__viewport full-width cell cell--auto">
+      <div class="layout--page layout--page--sidebar clearfix js-page-root">
+  <div class="page__mask d-print-none js-page-mask js-sidebar-hide"></div>
+  <div class="page__viewport">
+    <div class="page__actions d-print-none">
+      <div class="button button--circle button--lg box-shadow-2 sidebar-button js-sidebar-show">
+        <i class="fas fa-bars icon--show"></i>
+      </div>
+    </div>
+
+    <div class="grid page__grid">
+
+      <div class="page__sidebar d-print-none"><div class="sidebar-toc"><ul class="toc toc--navigator">
+<li class="toc-h1"><a href="/chatgpt/generating-prompts.html">Generating Prompts</a></li>
+<li class="toc-h1"><a href="/chatgpt/development-journey.html">Development Journey</a></li>
+<li class="toc-h1"><a href="/chatgpt/best-practices.html">Best Practices</a></li>
+<li class="toc-h1 active">
+              <a href="/chatgpt/lessons-learned.html">Lessons Learned</a>
+            </li>
+<li class="toc-h1">Prompts &amp; AI Development</li>
+<li class="toc-h2"><a href="/chatgpt/app-setup-prompt.html">App Setup Prompt</a></li>
+<li class="toc-h2"><a href="/chatgpt/documentation-setup-prompt.html">Documentation Setup Prompt</a></li>
+<li class="toc-h2"><a href="/chatgpt/testing-strategy-prompt.html">Testing Strategy Prompt</a></li>
+<li class="toc-h2"><a href="/chatgpt/ui-ux-prompt.html">UI/UX Considerations Prompt</a></li>
+</ul></div></div>
+<div class="page__main js-page-main has-aside cell cell--auto">
 
       <div class="page__main-inner">
 <div class="page__header d-print-none">
@@ -308,27 +331,118 @@
 </div>
   </header>
 </div>
-<div class="page__content"><div class="grid grid--reverse">
+<div class="page__content"><div class="main"><div class="grid grid--reverse">
 
-              <div class="col-aside d-print-none js-col-aside"></div>
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
 
               <div class="col-main cell cell--auto">
 <!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Setup Guide</h1></header><meta itemprop="headline" content="Setup Guide">
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Lessons Learned</h1></header><meta itemprop="headline" content="Lessons Learned">
 <meta itemprop="author" content="Mario Lotz">
 <meta itemprop="datePublished" content="2025-05-01T16:27:03+02:00">
 <div class="js-article-content">
-<h1 id="setup-guide">Setup Guide</h1>
+<h1 id="-lessons-learned-hvcms-documentation-setup">📖 Lessons Learned: HVCMS Documentation Setup</h1>
 
-<p>This section explains how to install and configure HVCMS.</p>
+<p>This document captures key insights, challenges, and best practices from setting up the HVCMS documentation system.</p>
+
+<h2 id="-overview">📌 Overview</h2>
+
+<ul>
+  <li>✅ <strong>Jekyll + TeXt Theme</strong> for a clean static site setup.</li>
+  <li>✅ <strong>Collections-based organization</strong> for modular content.</li>
+  <li>✅ <strong>Multi-environment hosting</strong> via <strong>GitHub Pages &amp; Apache + Passenger</strong>.</li>
+  <li>✅ <strong>Automated GitHub Flow &amp; CI/CD</strong> for seamless updates.</li>
+</ul>
+
+<h2 id="️-1-documentation-structure">🛠️ 1. Documentation Structure</h2>
+
+<p>All documentation files are stored inside the <strong><code class="language-plaintext highlighter-rouge">content/</code></strong> folder, with each section as a Jekyll collection.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>content/
+├── _usage/                 # End-user documentation
+├── _development/           # Developer documentation
+├── _chatgpt/               # ChatGPT development insights
+│   ├── lessons-learned.md  # This document
+assets/                     # Static assets
+_site/                      # Generated output
+</code></pre></div></div>
+
+<p>✅ <strong>Uses <code class="language-plaintext highlighter-rouge">collections_dir: content</code></strong> → No need for <code class="language-plaintext highlighter-rouge">source</code> per collection.<br>
+✅ <strong>Flat URL structure</strong> → <code class="language-plaintext highlighter-rouge">/usage/setup.html</code> instead of <code class="language-plaintext highlighter-rouge">/usage/setup/index.html</code>.</p>
+
+<h2 id="-2-navigation-setup">📂 2. Navigation Setup</h2>
+
+<p>Navigation is managed via <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> to ensure dynamic linking.</p>
+
+<h2 id="-3-github-pages-hosting">🌐 3. GitHub Pages Hosting</h2>
+
+<ul>
+  <li>Hosted at <strong><a href="https://docs.hvboom.ch" target="_blank" rel="noopener noreferrer" class="target-blank target-blank__icon"><code class="language-plaintext highlighter-rouge">docs.hvboom.ch</code></a></strong>.</li>
+  <li>Uses <strong>GitHub’s static workflow</strong> → <a href="https://github.com/HVboom/HVCMS/blob/main/.github/workflows/static.yml" target="_blank" rel="noopener noreferrer" class="target-blank target-blank__icon"><code class="language-plaintext highlighter-rouge">.github/workflows/static.yml</code></a>.</li>
+  <li>
+<strong>CNAME entry added to DNS provider</strong>:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>docs.hvboom.ch
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>✅ <strong>No additional DNS records needed</strong> beyond the <strong>CNAME entry</strong>.</p>
+
+<h2 id="️-4-local-hosting-via-apache--passenger">🖥️ 4. Local Hosting via Apache + Passenger</h2>
+
+<p>For local testing &amp; production deployment, the documentation is served via <strong>Apache + Passenger</strong>.</p>
+
+<p>✅ <strong>Uses a generalized Apache macro</strong> for flexible configurations.</p>
+
+<h2 id="-5-github-flow--versioning">🔄 5. GitHub Flow &amp; Versioning</h2>
+
+<ol>
+  <li>
+<strong>Feature Branches</strong> → Work happens in isolated branches.</li>
+  <li>
+<strong>Pull Requests &amp; Code Review</strong> → Merged after approval.</li>
+  <li>
+<strong>Tagged Versions</strong> → Major updates tracked via <strong>semantic versioning</strong>.</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> docs-setup
+<span class="c"># Make changes...</span>
+git commit <span class="nt">-m</span> <span class="s2">"Complete documentation setup"</span>
+git push origin docs-setup
+git tag <span class="nt">-a</span> v0.2.0 <span class="nt">-m</span> <span class="s2">"Complete Jekyll documentation setup"</span>
+git push origin v0.2.0
+</code></pre></div></div>
+
+<p>✅ <strong>Ensures well-tracked documentation updates</strong>.</p>
+
+<h2 id="-6-key-lessons-learned">📌 6. Key Lessons Learned</h2>
+
+<ul>
+  <li>
+<strong>Use <code class="language-plaintext highlighter-rouge">collections_dir: content</code></strong> → Keeps collections structured.</li>
+  <li>
+<strong>Hyphens (<code class="language-plaintext highlighter-rouge">-</code>) in filenames</strong> → Prevents Jekyll converting <code class="language-plaintext highlighter-rouge">_</code> to <code class="language-plaintext highlighter-rouge">-</code>.</li>
+  <li>
+<strong>Landing pages (<code class="language-plaintext highlighter-rouge">index.md</code>) for collections</strong> → Prevents Apache <code class="language-plaintext highlighter-rouge">403 Forbidden</code> errors.</li>
+  <li>
+<strong>Disabled TOC &amp; titles</strong> (<code class="language-plaintext highlighter-rouge">aside: toc: false</code>, <code class="language-plaintext highlighter-rouge">show_title: false</code>).</li>
+  <li>
+<strong>Explicit <code class="language-plaintext highlighter-rouge">modify_date</code> tracking</strong> → Clear last update info.</li>
+  <li>
+<strong>SimpleCov workflow fix</strong> → Prevented unstaged changes in Git.</li>
+</ul>
+
+<hr>
 </div>
 <section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
 
 <!-- end custom main bottom snippet -->
 </div>
-            </div></div>
+            </div></div></div>
 <div class="page__footer d-print-none">
 <footer class="footer py-4 js-page-footer">
   <div class="main">
@@ -375,6 +489,8 @@
 </div>
 </div>
     </div>
+</div>
+</div>
 <script>(function() {
   var SOURCES = window.TEXT_VARIABLES.sources;
   window.Lazyload.js(SOURCES.jquery, function() {
@@ -677,6 +793,98 @@
 /*(function () {
 
 })();*/
+</script><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $pageMask = $('.js-page-mask');
+    var $pageRoot = $('.js-page-root');
+    var $sidebarShow = $('.js-sidebar-show');
+    var $sidebarHide = $('.js-sidebar-hide');
+
+    function freeze(e) {
+      if (e.target === $pageMask[0]) {
+        e.preventDefault();
+      }
+    }
+    function stopBodyScrolling(bool) {
+      if (bool === true) {
+        window.addEventListener('touchmove', freeze, { passive: false });
+      } else {
+        window.removeEventListener('touchmove', freeze, { passive: false });
+      }
+    }
+
+    $sidebarShow.on('click', function() {
+      stopBodyScrolling(true); $pageRoot.addClass('show-sidebar');
+    });
+    $sidebarHide.on('click', function() {
+      stopBodyScrolling(false); $pageRoot.removeClass('show-sidebar');
+    });
+  });
+})();
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
 </script>
     </div>
     <script>(function () {
