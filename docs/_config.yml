@@ -26,6 +26,7 @@ author:
   linkedin: mario-lotz # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
   github: HVboom # "user_name" the last part of your profile url, e.g. https://github.com/user_name
 
+# profile: true
 # license: CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
 
 # Build settings
@@ -54,4 +55,5 @@ defaults:
       show_title: false
       show_tags: true
       aside:
-        toc: true
+        toc: true # Enable auto-generated table of contents
+

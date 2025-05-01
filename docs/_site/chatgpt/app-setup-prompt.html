@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Setup Guide - HVCMS Documentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>App Setup Prompt - HVCMS Documentation</title>
 
-<meta name="description" content="Setup Guide">
-<link rel="canonical" href="https://hvcms.docs.hvboom.biz/usage/setup.html"><link rel="alternate" type="application/rss+xml" title="HVCMS Documentation" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="🏗️ HVCMS App Setup Prompt">
+<link rel="canonical" href="https://hvcms.docs.hvboom.biz/chatgpt/app-setup-prompt.html"><link rel="alternate" type="application/rss+xml" title="HVCMS Documentation" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -253,8 +253,31 @@
 </head>
   <body>
     <div class="root" data-is-touch="false">
-      <div class="layout--page js-page-root">
-<div class="page__main js-page-main page__viewport full-width cell cell--auto">
+      <div class="layout--page layout--page--sidebar clearfix js-page-root">
+  <div class="page__mask d-print-none js-page-mask js-sidebar-hide"></div>
+  <div class="page__viewport">
+    <div class="page__actions d-print-none">
+      <div class="button button--circle button--lg box-shadow-2 sidebar-button js-sidebar-show">
+        <i class="fas fa-bars icon--show"></i>
+      </div>
+    </div>
+
+    <div class="grid page__grid">
+
+      <div class="page__sidebar d-print-none"><div class="sidebar-toc"><ul class="toc toc--navigator">
+<li class="toc-h1"><a href="/chatgpt/generating-prompts.html">Generating Prompts</a></li>
+<li class="toc-h1"><a href="/chatgpt/development-journey.html">Development Journey</a></li>
+<li class="toc-h1"><a href="/chatgpt/best-practices.html">Best Practices</a></li>
+<li class="toc-h1"><a href="/chatgpt/lessons-learned.html">Lessons Learned</a></li>
+<li class="toc-h1">Prompts &amp; AI Development</li>
+<li class="toc-h2 active">
+                <a href="/chatgpt/app-setup-prompt.html">App Setup Prompt</a>
+              </li>
+<li class="toc-h2"><a href="/chatgpt/documentation-setup-prompt.html">Documentation Setup Prompt</a></li>
+<li class="toc-h2"><a href="/chatgpt/testing-strategy-prompt.html">Testing Strategy Prompt</a></li>
+<li class="toc-h2"><a href="/chatgpt/ui-ux-prompt.html">UI/UX Considerations Prompt</a></li>
+</ul></div></div>
+<div class="page__main js-page-main has-aside cell cell--auto">
 
       <div class="page__main-inner">
 <div class="page__header d-print-none">
@@ -308,27 +331,301 @@
 </div>
   </header>
 </div>
-<div class="page__content"><div class="grid grid--reverse">
+<div class="page__content"><div class="main"><div class="grid grid--reverse">
 
-              <div class="col-aside d-print-none js-col-aside"></div>
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
 
               <div class="col-main cell cell--auto">
 <!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Setup Guide</h1></header><meta itemprop="headline" content="Setup Guide">
+<article itemscope itemtype="http://schema.org/Article"><header style="display:none;"><h1>App Setup Prompt</h1></header><meta itemprop="headline" content="App Setup Prompt">
 <meta itemprop="author" content="Mario Lotz">
 <meta itemprop="datePublished" content="2025-05-01T16:27:03+02:00">
 <div class="js-article-content">
-<h1 id="setup-guide">Setup Guide</h1>
+<div class="layout--article">
+<!-- start custom article top snippet -->
 
-<p>This section explains how to install and configure HVCMS.</p>
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody">
+<h1 id="️-hvcms-app-setup-prompt">🏗️ HVCMS App Setup Prompt</h1>
+
+<p>Set up a Rails 8 application named <strong>HVCMS</strong> that serves as a CMS. The application should adhere to the following requirements:</p>
+
+<hr>
+
+<h2 id="environment-details">Environment Details</h2>
+
+<ol>
+  <li>
+<strong>Operating System</strong>: Ubuntu 24.04</li>
+  <li>
+<strong>Ruby Version</strong>: Latest version (currently 3.3.6), managed with RVM and a dedicated gemset (<code class="language-plaintext highlighter-rouge">hvcms</code>)</li>
+  <li>
+<strong>Database</strong>: PostgreSQL 16.6 with UUID as the default primary key type</li>
+  <li>
+<strong>Hosting</strong>: PhusionPassenger with waitlist configuration for <code class="language-plaintext highlighter-rouge">*.hvboom.biz</code> in development</li>
+  <li>
+<strong>Sensitive Data Storage</strong>: Use environment-specific credentials for sensitive data (e.g., database password)</li>
+</ol>
+
+<hr>
+
+<h2 id="application-setup-requirements">Application Setup Requirements</h2>
+
+<h3 id="1-generate-rails-application">1. Generate Rails Application</h3>
+
+<ul>
+  <li>
+<strong>Name</strong>: HVCMS</li>
+  <li>
+<strong>CSS</strong>: Tailwind CSS with a greenish color scheme (aligned to HyperUI)</li>
+  <li>
+<strong>Database</strong>: PostgreSQL</li>
+  <li>
+<strong>Interactivity</strong>: Hotwire and Stimulus (pre-configured controllers)</li>
+  <li>
+<strong>Skip</strong>:
+    <ul>
+      <li>Action Mailbox</li>
+      <li>Action Mailer</li>
+      <li>System tests</li>
+      <li>Minitest</li>
+      <li>Helper files</li>
+      <li>Empty JavaScript and CSS files for models</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Command</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails new HVCMS <span class="nt">--css</span><span class="o">=</span>tailwind <span class="nt">--database</span><span class="o">=</span>postgresql <span class="nt">--skip-action-mailbox</span> <span class="nt">--skip-action-mailer</span> <span class="nt">--skip-system-test</span> <span class="nt">--skip-m</span> <span class="nt">--skip-sprockets</span>
+</code></pre></div></div>
+
+<h3 id="2-dedicated-gemset">2. Dedicated Gemset</h3>
+
+<ul>
+  <li>Create <code class="language-plaintext highlighter-rouge">.ruby-version</code> and <code class="language-plaintext highlighter-rouge">.ruby-gemset</code>:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.ruby-version: 3.3.6
+.ruby-gemset: hvcms
+</code></pre></div></div>
+
+<h3 id="3-configure-uuid-for-primary-keys">3. Configure UUID for Primary Keys</h3>
+
+<p>In <code class="language-plaintext highlighter-rouge">config/application.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">generators</span> <span class="k">do</span> <span class="o">|</span><span class="n">g</span><span class="o">|</span>
+  <span class="n">g</span><span class="p">.</span><span class="nf">orm</span> <span class="ss">:active_record</span><span class="p">,</span> <span class="ss">primary_key_type: :uuid</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="4-phusionpassenger-configuration">4. PhusionPassenger Configuration</h3>
+
+<p>In <code class="language-plaintext highlighter-rouge">config/application.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">hosts</span> <span class="o">&lt;&lt;</span> <span class="sr">/\Ahv.*\.hvboom\.biz\Z/</span>
+</code></pre></div></div>
+
+<h3 id="5-local-file-storage">5. Local File Storage</h3>
+
+<ul>
+  <li>Use ActiveStorage for local file and image uploads.</li>
+</ul>
+
+<hr>
+
+<h2 id="feature-requirements">Feature Requirements</h2>
+
+<h3 id="1-authentication">1. Authentication</h3>
+
+<ul>
+  <li>Implement roles:
+    <ul>
+      <li>Admins can manage users and reset passwords</li>
+    </ul>
+  </li>
+  <li>Multi-language support (English and German locales)</li>
+  <li>Protect CMS routes with <code class="language-plaintext highlighter-rouge">require_login</code> helper</li>
+</ul>
+
+<h3 id="2-page-types">2. Page Types</h3>
+
+<ul>
+  <li>
+<strong>Text Pages</strong>: Action Text for rich text editing</li>
+  <li>
+<strong>Slideshow Pages</strong>:
+    <ul>
+      <li>Drag-and-drop uploads</li>
+      <li>Carousel or grid view</li>
+      <li>Drag-and-drop reordering</li>
+    </ul>
+  </li>
+  <li>
+<strong>Map Pages</strong>:
+    <ul>
+      <li>Static Google Maps</li>
+      <li>Routing links</li>
+    </ul>
+  </li>
+  <li>
+<strong>Future</strong>: Contact form support</li>
+</ul>
+
+<h3 id="3-menu-management">3. Menu Management</h3>
+
+<ul>
+  <li>Flexible user-defined structures for generated HTML pages</li>
+  <li>Support icons, tooltips, and multi-level nesting</li>
+</ul>
+
+<h3 id="4-file--picture-uploads">4. File &amp; Picture Uploads</h3>
+
+<ul>
+  <li>Thumbnails generation using MiniMagick</li>
+  <li>Cropping functionality with predefined aspect ratios</li>
+</ul>
+
+<h3 id="5-export-cms-content">5. Export CMS Content</h3>
+
+<ul>
+  <li>Export pages to static HTML with friendly URLs</li>
+  <li>Name assets based on page, gallery, and sort position</li>
+  <li>Export only published pages and related content</li>
+</ul>
+
+<hr>
+
+<h2 id="development-practices">Development Practices</h2>
+
+<h3 id="1-testing-framework">1. Testing Framework</h3>
+
+<ul>
+  <li>Use RSpec</li>
+  <li>Support Shoulda Matchers, FactoryBot, and Faker</li>
+</ul>
+
+<h3 id="2-integration-tests">2. Integration Tests</h3>
+
+<ul>
+  <li>Test on latest Safari, Chrome, Firefox, and Edge using Capybara and Selenium</li>
+  <li>Focus on realistic scenarios with FactoryBot and Faker</li>
+  <li>Include mobile browser testing for generated pages</li>
+</ul>
+
+<h3 id="3-accessibility">3. Accessibility</h3>
+
+<ul>
+  <li>Ensure WCAG 2.1 AA compliance for app and generated pages</li>
+  <li>Use external tools (e.g., Lighthouse, axe-core)</li>
+</ul>
+
+<h3 id="4-semantic-versioning">4. Semantic Versioning</h3>
+
+<ul>
+  <li>Maintain <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> manually</li>
+  <li>Generate change summaries on request</li>
+  <li>Use Git pre-push hooks to enforce <code class="language-plaintext highlighter-rouge">vX.Y.Z</code> format</li>
+  <li>Document rules in <code class="language-plaintext highlighter-rouge">CONTRIBUTING.md</code>:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Use vX.Y.Z format for all Git tags
+- Increment:
+  - Major (X) for breaking changes
+  - Minor (Y) for new features
+  - Patch (Z) for bug fixes
+</code></pre></div></div>
+
+<h3 id="5-git-workflow">5. Git Workflow</h3>
+
+<ul>
+  <li>Follow A Successful Git Branching Model:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">feature/*</code>, <code class="language-plaintext highlighter-rouge">release/*</code>, <code class="language-plaintext highlighter-rouge">hotfix/*</code> branches</li>
+      <li>Semantic version tags</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Example</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag <span class="nt">-a</span> v1.0.0 <span class="nt">-m</span> <span class="s2">"Release v1.0.0"</span>
+</code></pre></div></div>
+
+<h3 id="6-documentation">6. Documentation</h3>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">doc</code> folder for product documentation</li>
+  <li>Base documentation on Jekyll + TeXt Theme</li>
+  <li>Serve <code class="language-plaintext highlighter-rouge">doc</code> folder as GitHub Pages base</li>
+</ul>
+
+<hr>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Start with:</p>
+
+<ol>
+  <li>Setting up the Rails application</li>
+  <li>Implementing authentication</li>
+  <li>Building the CMS page types</li>
+  <li>Setting up documentation</li>
+</ol>
+
+<hr>
+
+<p><em>Let me know where you’d like to begin!</em></p>
+</div>
+<div class="d-print-none">
+<footer class="article__footer"><span>Last updated
+      <time itemprop="dateModified" datetime="2025-01-06T00:00:00+01:00">Jan 06, 2025</time>
+    </span><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+<div class="article__license"></div></footer>
+<div class="article__section-navigator clearfix"><div class="next">
+<span>NEXT</span><a href="/chatgpt/documentation-setup-prompt.html">Documentation Setup Prompt</a>
+</div></div>
+</div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script>
 </div>
 <section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
 
 <!-- end custom main bottom snippet -->
 </div>
-            </div></div>
+            </div></div></div>
 <div class="page__footer d-print-none">
 <footer class="footer py-4 js-page-footer">
   <div class="main">
@@ -375,6 +672,8 @@
 </div>
 </div>
     </div>
+</div>
+</div>
 <script>(function() {
   var SOURCES = window.TEXT_VARIABLES.sources;
   window.Lazyload.js(SOURCES.jquery, function() {
@@ -677,6 +976,98 @@
 /*(function () {
 
 })();*/
+</script><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $pageMask = $('.js-page-mask');
+    var $pageRoot = $('.js-page-root');
+    var $sidebarShow = $('.js-sidebar-show');
+    var $sidebarHide = $('.js-sidebar-hide');
+
+    function freeze(e) {
+      if (e.target === $pageMask[0]) {
+        e.preventDefault();
+      }
+    }
+    function stopBodyScrolling(bool) {
+      if (bool === true) {
+        window.addEventListener('touchmove', freeze, { passive: false });
+      } else {
+        window.removeEventListener('touchmove', freeze, { passive: false });
+      }
+    }
+
+    $sidebarShow.on('click', function() {
+      stopBodyScrolling(true); $pageRoot.addClass('show-sidebar');
+    });
+    $sidebarHide.on('click', function() {
+      stopBodyScrolling(false); $pageRoot.removeClass('show-sidebar');
+    });
+  });
+})();
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
 </script>
     </div>
     <script>(function () {
